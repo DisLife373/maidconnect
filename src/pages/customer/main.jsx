@@ -41,6 +41,7 @@ function CustomerMain() {
       })
       .then((res) => {
         const recommend_data = res.data.recommend_maid;
+
         const maid_ids = recommend_data.map((maid) => maid.user.user_id);
 
         const customer_address = res.data.customer_address;
@@ -145,6 +146,8 @@ function CustomerMain() {
     const cut_id_maid = Object.fromEntries(
       Object.entries(selected_maid).filter(([key]) => key !== "user_id")
     );
+    console.log(cut_id_maid);
+
     if (window.localStorage.getItem("selectedMaid"))
       window.localStorage.removeItem("selectedMaid");
     window.localStorage.setItem("selectedMaid", JSON.stringify(cut_id_maid));
@@ -165,6 +168,7 @@ function CustomerMain() {
       })
       .then((res) => {
         const maid_data = res.data.selected_maid;
+
         if (window.localStorage.getItem("selectedMaid"))
           window.localStorage.removeItem("selectedMaid");
         window.localStorage.setItem("selectedMaid", JSON.stringify(maid_data));

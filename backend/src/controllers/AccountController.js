@@ -89,8 +89,7 @@ const getMaidRehired = async (req, res) => {
       const maid_query = `SELECT acc.user_role, acc.user_gender, acc.user_pic, acc.firstname, acc.lastname, acc.birthday, acc.tel, acc.email, acc.description, add.latitude, add.longitude, jobtype.jobs, r.avg_rate
                         FROM account acc
                         INNER JOIN (
-                            SELECT userjob.user_id,
-                                  ARRAY_AGG(json_build_object('job_id', job.job_id, 'job_name', job.job_name)) AS jobs
+                            SELECT userjob.user_id, ARRAY_AGG(job.job_id) AS jobs
                             FROM job
                             INNER JOIN userjob ON job.job_id = userjob.job_id
                             WHERE userjob.user_id = $1

@@ -162,8 +162,8 @@ function UserMaidEmploy() {
     }));
   };
 
-  const handleStartTime = (_hour, _minute) => {
-    const time = _hour + ":" + _minute + ":00";
+  const handleStartTime = (_hour) => {
+    const time = _hour + ":00:00";
     setNewInvoice((prevState) => ({
       ...prevState,
       start_time: time,

@@ -49,6 +49,7 @@ function EmployMaid({
           <label htmlFor="startTime">
             <span>เวลาเริ่มงาน:</span>
             <TimePicker
+              minuteStep={60}
               className="antd-time-picker"
               name="start_time"
               value={startTime}
