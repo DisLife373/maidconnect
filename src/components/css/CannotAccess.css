@@ -1,0 +1,102 @@
+.protect-route {
+  font-size: 2vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.protect-route header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.protect-route header span {
+  font-size: min(5em, 100px);
+  font-weight: 600;
+  color: #00897b;
+}
+.protect-route header img {
+  aspect-ratio: 1 / 1;
+  width: min(5em, 200px);
+}
+.protect-route main span {
+  font-size: min(3em, 50px);
+  font-weight: 400;
+}
+.protect-route footer {
+  padding: 1em;
+  display: flex;
+  align-self: center;
+  gap: 1.5em;
+}
+.protect-route footer button {
+  appearance: button;
+  background-color: #00897b;
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0)
+  );
+  border: 1px solid #00897b;
+  border-radius: 1rem;
+  box-shadow: rgba(3, 84, 69, 0.15) 0 1px 0 inset,
+    rgba(46, 54, 80, 0.075) 0 1px 1px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter, sans-serif;
+  font-size: min(1.5em, 20px);
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0.25em 1em;
+  text-align: center;
+  text-transform: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+.protect-route footer button.cancle {
+  background-color: white;
+  border: 0.2em solid #00897b;
+  color: #00897b;
+}
+.protect-route footer button:focus:not(:focus-visible),
+.protect-route footer button:focus {
+  outline: 0;
+}
+.protect-route footer button:hover {
+  background-color: #00897b;
+  border-color: #00897b;
+}
+.protect-route footer button.cancle {
+  background-color: white;
+  border-color: #00897b;
+}
+.protect-route footer button:focus {
+  background-color: #80cbce;
+  border-color: #93c9ca;
+  box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0 inset,
+    rgba(46, 54, 80, 0.075) 0 1px 1px, rgba(104, 101, 235, 0.5) 0 0 0 0.2rem;
+}
+.protect-route footer button:active {
+  background-color: #519ea1;
+  background-image: none;
+  border-color: #5bc6cc;
+  box-shadow: rgba(46, 54, 80, 0.125) 0 3px 5px inset;
+}
+.protect-route footer button:focus {
+  box-shadow: rgba(3, 84, 69, 0.125) 0 3px 5px inset,
+    rgba(104, 101, 235, 0.5) 0 0 0 0.2rem;
+}
+.protect-route footer button:disabled {
+  background-image: none;
+  box-shadow: none;
+  opacity: 0.65;
+  pointer-events: none;
+}
