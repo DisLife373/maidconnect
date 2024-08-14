@@ -1,8 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-ok {
+    @apply text-xl bg-green-darkness hover:bg-background-color py-3 px-8 rounded-full text-white transition duration-500;
+  }
+  .text-form-alert {
+    @apply text-sm absolute block font-semibold transition-all duration-200 ease-in-out;
+  }
+  .input-text-form {
+    @apply text-base placeholder-gray-400 h-10 w-full rounded-full bg-light-green px-4 outline-none drop-shadow-sm transition-all duration-200 ease-in-out focus:ring-2 focus:ring-green-darkness;
+  }
+  .label-text-form {
+    @apply relative w-full;
+  }
+  .span-head-form {
+    @apply block w-full pb-1 text-xl transition-all duration-200 ease-in-out group-focus-within:text-green-darkness
+  }
+}
+/* body {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
   background-color: #ffffff;
-}
+} */
