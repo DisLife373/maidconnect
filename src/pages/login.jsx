@@ -12,7 +12,7 @@ function Login() {
     account: "",
     password: "",
   });
-  const [alert, setAlert] = useState("pass");
+  const [alert, setAlert] = useState("");
 
   const login = async (value) => await api.post("/api/v1/account/login", value);
 
@@ -37,20 +37,20 @@ function Login() {
   };
 
   return (
-    <div className="bg-background-color flex justify-center items-center h-dvh p-20" >
+    <div className="bg-background-color flex justify-center items-center h-dvh" >
       <Alert />
       <main className="grid grid-cols-3 w-full h-full" >
-        <div className="bg-no-repeat bg-contain bg-center col-span-2 pb-4" style={{ backgroundImage: "url(/public/graphic/login.svg)"}}></div>
+        <div className="bg-no-repeat bg-contain bg-center col-span-2 pb-4 m-20" style={{ backgroundImage: "url(/graphic/login.svg)"}}></div>
         {/* <img src="/public/graphic/login.svg" alt="login background" className="z-01 " /> */}
-        <form onSubmit={handleSubmit} className="login-container bg-white rounded-lg p-10 flex flex-col justify-center space-y-10">
-          <h1 className="text-5xl text-green-darkness"> ลงชื่อเข้าใช้ </h1>
+        <form onSubmit={handleSubmit} className="login-container bg-white  p-10 flex flex-col justify-center space-y-10">
+          <h1 className="text-green-darkness text-xl sm:text-2xl md:text-3l lg:text-4xl xl:text-5xl"> ลงชื่อเข้าใช้ </h1>
           <label
             onClick={() => {
               setAlert("");
             }}
             className="label-text-form group" 
           >
-            <span className="span-head-form">อีเมล</span>
+            <span className="span-head-form sm:text-sm md:text-base lg:text-basexl">อีเมล</span>
             <input
               name="account"
               type="text"
@@ -59,10 +59,10 @@ function Login() {
               value={user.account}
               required
               placeholder="example@mail.com"
-              className="input-text-form peer"
+              className="input-text-form peer sm:text-sm md:text-base"
             />
             <span
-              className="text-form-alert"
+              className="text-form-alert sm:text-sx md:text-sm lg:text-base"
               style={
                 alert === "acc"
                   ? { color: "red", "font-size": "14px" }
@@ -79,7 +79,7 @@ function Login() {
             }}
               className="label-text-form group"
           >
-            <span className="span-head-form">รหัสผ่าน</span>
+            <span className="span-head-form sm:text-sm md:text-base lg:text-basexl">รหัสผ่าน</span>
             <input
               name="password"
               type="password"
@@ -87,10 +87,10 @@ function Login() {
               autoComplete="off"
               value={user.password}
               required
-              className="input-text-form peer"
+              className="input-text-form peer sm:text-sm md:text-base"
             />
             <span
-              className="text-form-alert"
+              className="text-form-alert sm:text-sx md:text-sm lg:text-base"
               style={
                 alert === "pass"
                   ? { color: "red" }
@@ -100,11 +100,11 @@ function Login() {
               รหัสผ่านไม่ถูกต้อง
             </span>
           </label>
-          <label className=" flex flex-col justify-center non-account pt-4">
-            <button type="submit" className="btn-ok"> เข้าสู่ระบบ </button>
-            <p className="justify-self-start">
+          <label className=" flex flex-col pt-4">
+            <button type="submit" className="btn-ok sm:text-sm md:text-base lg:text-basexl"> เข้าสู่ระบบ </button>
+            <span className="mt-4">
               ยังไม่มีบัญชีผู้ใช้&nbsp; <a href="/register" className="text-dark-pink">สร้างบัญชี</a>
-            </p>
+            </span>
           </label>
         </form>
       </main>

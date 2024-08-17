@@ -6,19 +6,31 @@
 
 @layer components {
   .btn-ok {
-    @apply text-xl bg-green-darkness hover:bg-background-color py-3 px-8 rounded-full text-white transition duration-500;
+    @apply text-sx bg-green-darkness hover:bg-background-color py-2 px-6 rounded-full text-white transition duration-500;
+  }
+  .btn-disable {
+	@apply text-sx bg-gray-400 text-white py-2 px-6 rounded-full opacity-50 cursor-not-allowed
   }
   .text-form-alert {
-    @apply text-sm absolute block font-semibold transition-all duration-200 ease-in-out;
+    @apply text-ss absolute block font-semibold transition-all duration-200 ease-in-out;
   }
   .input-text-form {
-    @apply text-base placeholder-gray-400 h-10 w-full rounded-full bg-light-green px-4 outline-none drop-shadow-sm transition-all duration-200 ease-in-out focus:ring-2 focus:ring-green-darkness;
+    @apply text-sx placeholder-gray-400 h-7 w-full rounded-full bg-light-green px-4 outline-none drop-shadow-sm transition-all duration-200 ease-in-out focus:ring-2 focus:ring-green-darkness caret-green-darkness;
   }
   .label-text-form {
     @apply relative w-full;
   }
   .span-head-form {
-    @apply block w-full pb-1 text-xl transition-all duration-200 ease-in-out group-focus-within:text-green-darkness
+    @apply block w-full pb-1 text-sx transition-all duration-200 ease-in-out group-focus-within:text-green-darkness
+  }
+  .input-radio {
+	@apply relative h-5 w-5 cursor-pointer appearance-none rounded-full border-2 border-dark-pink transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:opacity-0 before:transition-opacity checked:before:bg-gray-900 hover:before:opacity-10 checked:appearance-auto accent-dark-pink
+  }
+  .input-radio-label {
+	@apply bg-light-green p-2 relative flex items-center rounded-full cursor-pointer gap-2
+  }
+  .navbar-menu {
+	@apply text-base text-dark-green active:text-dark-pink
   }
 }
 /* body {

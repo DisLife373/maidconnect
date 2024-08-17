@@ -10,7 +10,9 @@ export default {
         'light-green': '#E0F2F1',
         'background-color': '#80cbc4',
         'green-darkness': '#00897B',
+        'dark-green': "#286359",
         'dark-pink': '#E1829B',
+        'light-pink': '#FFBED7',
       }
     },
     fontSize: {
@@ -18,16 +20,31 @@ export default {
         fontWeight: 1000
       }],
       '4xl': ['2.441rem', {
+        fontWeight: 900
+      }],
+      '3xl': ['1.875rem', {
         fontWeight: 800
+      }],
+      '2xl': ['1.5rem',{
+        fontWeight: 700
       }],
       xl: ['1.25rem', {
         fontWeight: 600
+      }],
+      basexl: ['1.1rem', {
+        fontWeight: 500
       }],
       base: ['1rem', {
         fontWeight: 400
       }],
       sm: ['0.8rem', {
         fontWeight: 200
+      }],
+      sx: ['0.7rem', {
+        fontWeight: 100
+      }],
+      ss: ['0.5rem', {
+        fontWeight: 50
       }],
     }
   },
