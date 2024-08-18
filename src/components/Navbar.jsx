@@ -7,7 +7,7 @@ import {
 } from "react-icons/bs";
 import { GiBroom } from "react-icons/gi";
 // import "./css/NewNavbar.css";
-function Navbar({ firstpage, secondpage, thirdpage }) {
+function Navbar({firstpage, secondpage, thirdpage}) {
   const isStatusActive = location.pathname.startsWith("/status");
   const [showNavbar, setShowNavbar] = useState(false);
   const handleShowNavbar = () => {
@@ -45,10 +45,10 @@ function Navbar({ firstpage, secondpage, thirdpage }) {
                   >
                     งานของคุณ
                   </NavLink>
-                  <ul className="absolute hidden group-hover:flex flex-col gap-2 mt-20 bg-light-green p-2 shadow-lg p-10">
-                    <li><NavLink to="wait" className="text-base sm:text-basexl"> {firstpage} </NavLink></li>
-                    <li><NavLink to="work" className="text-base sm:text-basexl"> {secondpage} </NavLink></li>
-                    <li><NavLink to="end" className="text-base sm:text-basexl"> {thirdpage} </NavLink></li>
+                  <ul className="absolute hidden group-hover:flex flex-col gap-2 mt-5 bg-light-green p-2 shadow-lg p-10 w-40">
+                    <li><NavLink to="status/wait" className="text-smbase sm:text-base hover:text-background-color"> {firstpage} </NavLink></li>
+                    <li><NavLink to="status/work" className="text-smbase sm:text-base hover:text-background-color"> {secondpage} </NavLink></li>
+                    <li><NavLink to="status/end" className="text-smbase sm:text-base hover:text-background-color"> {thirdpage} </NavLink></li>
                   </ul>
                 </li>
                 <li>
@@ -71,4 +71,4 @@ function Navbar({ firstpage, secondpage, thirdpage }) {
   );
 }
 
-export default StatusBar;
+export default Navbar;

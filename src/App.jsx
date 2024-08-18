@@ -81,7 +81,6 @@ function App() {
               //     thirdpage={"จบงาน"}
               //   />
               // ),
-              // element: <StatusBar />,
               children: [
                 {
                   path: "wait",
@@ -138,7 +137,6 @@ function App() {
               //     thirdpage={"ให้คะแนน"}
               //   />
               // ),
-              // element: <StatusBar />,
               children: [
                 {
                   path: "wait",

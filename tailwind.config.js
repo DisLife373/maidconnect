@@ -37,6 +37,9 @@ export default {
       base: ['1rem', {
         fontWeight: 400
       }],
+      smbase: ['0.9rem', {
+        fontWeight: 300
+      }],
       sm: ['0.8rem', {
         fontWeight: 200
       }],
