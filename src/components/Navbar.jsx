@@ -7,7 +7,7 @@ import {
 } from "react-icons/bs";
 import { GiBroom } from "react-icons/gi";
 // import "./css/NewNavbar.css";
-function StatusBar() {
+function Navbar({ firstpage, secondpage, thirdpage }) {
   const isStatusActive = location.pathname.startsWith("/status");
   const [showNavbar, setShowNavbar] = useState(false);
   const handleShowNavbar = () => {
@@ -18,34 +18,44 @@ function StatusBar() {
     window.localStorage.clear();
   };
 
+  console.log()
+
   return (
     <>
       <header>
-        <nav className="bg-background-color grid grid-cols-2 px-5">
-         <img src="/graphic/MaidConnect.svg" alt="" className="w-44" />
+        <nav className="relative bg-background-color grid grid-cols-2 px-5 w-full">
+          <div className="w-40 content-end">
+            <img src="/graphic/MaidConnect.svg" alt="" />
+          </div>
           <div className="container content-center">
             <div className="logo"></div>
             <div className="menu-icon" onClick={handleShowNavbar}></div>
             <div className={`nav-elements${showNavbar && "active"}`}>
-              <ul className="flex border justify-end gap-5">
-                <li>
-                  <NavLink to="main" className={"navbar-menu sm:text-basexl md:text-xl"}>หน้าหลัก</NavLink>
+              <ul className=" flex justify-end gap-5">
+                <li className="">
+                  <NavLink to="main" className={"navbar-menu sm:text-basexl"}>หน้าหลัก</NavLink>
                 </li>
-                <li>
+                <li className="relative group">
                   <NavLink
-                    to="status/wait"
-                    className={({ isActive }) =>
-                      isActive || isStatusActive ? "active navbar-menu sm:text-basexl md:text-xl" : "navbar-menu sm:text-basexl md:text-xl"
-                    }
+                    to="status"
+                    // className={({ isActive }) =>
+                    //   isActive || isStatusActive ? "active navbar-menu sm:text-basexl md:text-xl" : "navbar-menu sm:text-basexl md:text-xl"
+                    // }
+                    className={"navbar-menu sm:text-basexl"}
                   >
                     งานของคุณ
                   </NavLink>
+                  <ul className="absolute hidden group-hover:flex flex-col gap-2 mt-20 bg-light-green p-2 shadow-lg p-10">
+                    <li><NavLink to="wait" className="text-base sm:text-basexl"> {firstpage} </NavLink></li>
+                    <li><NavLink to="work" className="text-base sm:text-basexl"> {secondpage} </NavLink></li>
+                    <li><NavLink to="end" className="text-base sm:text-basexl"> {thirdpage} </NavLink></li>
+                  </ul>
                 </li>
                 <li>
-                  <NavLink to="profile" className="navbar-menu sm:text-basexl md:text-xl">โปรไฟล์ของคุณ</NavLink>
+                  <NavLink to="profile" className="navbar-menu sm:text-basexl">โปรไฟล์ของคุณ</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/login" onClick={logout} className={"text-base sm:text-basexl md:text-xl text-dark-green"}>
+                  <NavLink to="/login" onClick={logout} className={"navbar-menu sm:text-basexl bg-green-darkness rounded-full px-3 py-1 text-white hover:bg-light-green hover:text-green-darkness transition duration-500"}>
                     ออกจากระบบ
                   </NavLink>
                 </li>

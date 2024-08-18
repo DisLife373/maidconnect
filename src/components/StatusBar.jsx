@@ -1,18 +1,18 @@
 import { NavLink, Outlet } from "react-router-dom";
-import "./css/StatusBar.css";
-function StatusBar({ firstpage, secondpage, thirdpage }) {
+// import "./css/StatusBar.css";
+function StatusBar() {
   return (
     <>
-      <main>
-        <Outlet />
-      </main>
-      <footer className="statusbar-container">
-        <nav className="statusbar-nav">
+      {/* <main>
+        <nav className="statusbar-nav bg-light-green pt-5">
           <NavLink to="wait"> {firstpage} </NavLink>
           <NavLink to="work"> {secondpage} </NavLink>
           <NavLink to="end"> {thirdpage} </NavLink>
         </nav>
-      </footer>
+      </main> */}
+      <main className="statusbar-container">
+        <Outlet />
+      </main>
     </>
   );
 }

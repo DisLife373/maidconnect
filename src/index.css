@@ -30,7 +30,10 @@
 	@apply bg-light-green p-2 relative flex items-center rounded-full cursor-pointer gap-2
   }
   .navbar-menu {
-	@apply text-base text-dark-green active:text-dark-pink
+	@apply text-base text-green-darkness hover:text-light-green active:text-dark-green pb-5
+  }
+  .active {
+    @apply text-dark-green border-b-4 border-dark-green
   }
 }
 /* body {
