@@ -16,13 +16,19 @@ function UserStatusWait() {
       firstname: "atchima",
       lastname: "nateepradap",
       jobs: [
-        "กวาดบ้าน",
-        "ถูบ้าน",
-        "ล้างจาน",
-        "สักผ้า",
-        "ถูบ้าน",
-        "ล้างจาน",
-        "สักผ้า",
+        {job_id: 1, job_name: 'ถูบ้าน'},
+        {job_id: 2, job_name: 'ถูบ้าน'},
+        {job_id: 3, job_name: 'ถูบ้าน'},
+        {job_id: 4, job_name: 'ถูบ้าน'},
+        {job_id: 5, job_name: 'ถูบ้าน'},
+        {job_id: 6, job_name: 'ถูบ้าน'},
+        {job_id: 7, job_name: 'ถูบ้าน'},
+        {job_id: 9, job_name: 'ถูบ้าน'},
+        {job_id: 10, job_name: 'ถูบ้าน'},
+        {job_id: 11, job_name: 'ถูบ้าน'},
+        {job_id: 11, job_name: 'ถูบ้าน'},
+        {job_id: 11, job_name: 'ถูบ้าน'},
+        {job_id: 11, job_name: 'ถูบ้าน'},
       ],
       start_time: "13:00:00",
       end_time: "14:00:00",
@@ -32,38 +38,82 @@ function UserStatusWait() {
       id: 2,
       firstname: "atchima",
       lastname: "nateepradap",
-      jobs: ["กวาดบ้าน", "ถูบ้าน", "ล้างจาน", "สักผ้า"],
+      jobs: [
+        {job_id: 1, job_name: 'ถูบ้าน'},
+        {job_id: 2, job_name: 'ถูบ้าน'},
+        {job_id: 3, job_name: 'ถูบ้าน'},
+        {job_id: 4, job_name: 'ถูบ้าน'},
+        {job_id: 5, job_name: 'ถูบ้าน'},
+        {job_id: 6, job_name: 'ถูบ้าน'},
+        {job_id: 7, job_name: 'ถูบ้าน'},
+        {job_id: 9, job_name: 'ถูบ้าน'},
+        {job_id: 10, job_name: 'ถูบ้าน'},
+        {job_id: 11, job_name: 'ถูบ้าน'},
+      ],
       start_time: "13:00:00",
       end_time: "14:00:00",
       work_date: "12 ก.ย. 66",
+      status: "wait",
     },
     {
       id: 3,
       firstname: "atchi",
       lastname: "natee",
-      jobs: ["กวาดบ้าน", "ถูบ้าน", "ล้างจาน", "สักผ้า"],
+      jobs: [
+        {job_id: 1, job_name: 'ถูบ้าน'},
+        {job_id: 2, job_name: 'ถูบ้าน'},
+        {job_id: 3, job_name: 'ถูบ้าน'},
+        {job_id: 4, job_name: 'ถูบ้าน'},
+        {job_id: 5, job_name: 'ถูบ้าน'},
+        {job_id: 6, job_name: 'ถูบ้าน'},
+        {job_id: 7, job_name: 'ถูบ้าน'},
+        {job_id: 9, job_name: 'ถูบ้าน'},
+        {job_id: 10, job_name: 'ถูบ้าน'},
+        {job_id: 11, job_name: 'ถูบ้าน'},
+      ],
+      start_time: "13:00:00",
+      end_time: "14:00:00",
+      work_date: "12 ก.ย. 66",
+      status: "work",
+    },
+    {
+      id: 4,
+      firstname: "atchi",
+      lastname: "natee",
+      jobs: [
+        {job_id: 1, job_name: 'ถูบ้าน'},
+        {job_id: 2, job_name: 'ถูบ้าน'},
+        {job_id: 3, job_name: 'ถูบ้าน'},
+        {job_id: 4, job_name: 'ถูบ้าน'},
+        {job_id: 5, job_name: 'ถูบ้าน'},
+        {job_id: 6, job_name: 'ถูบ้าน'},
+        {job_id: 7, job_name: 'ถูบ้าน'},
+        {job_id: 9, job_name: 'ถูบ้าน'},
+        {job_id: 10, job_name: 'ถูบ้าน'},
+        {job_id: 11, job_name: 'ถูบ้าน'},
+      ],
       start_time: "13:00:00",
       end_time: "14:00:00",
       work_date: "12 ก.ย. 66",
     },
   ]);
 
-  useEffect(() => {
-    const fetchCustomer = async () => {
-      try {
-        const res = await api.post("/api/v1/invoice/customer/status/wait", {
-          token: window.localStorage.getItem("authtoken"),
-        });
-        setCustomers(res.data);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    fetchCustomer();
-  }, []);
-  useEffect(() => {
-    console.log(customers);
-  }, [customers]);
+  // useEffect(() => {
+  //   const fetchCustomer = async () => {
+  //     try {
+  //       const res = await api.post("/api/v1/invoice/customer/status/wait", {
+  //         token: window.localStorage.getItem("authtoken"),
+  //       });
+  //       setCustomers(res.data);
+  //     } catch (err) {
+  //       console.log(err);
+  //     }
+  //   };
+  //   fetchCustomer();
+  // }, []);
+  // useEffect(() => {
+  //   console.log(customers);
+  // }, [customers]);
 
   const handleClickSummary = (invId) => {
     setInvoiceId(invId);
@@ -121,10 +171,10 @@ function UserStatusWait() {
           clickCancel={() => setInvoiceId(null)}
         />
       )}
-      <div style={{ marginBottom: "10vw" }}>
+      <div style={{ marginBottom: "10vw" }} className="px-10 grid grid-cols-3 gap-5 row-auto ">
         {customers.map((customer, customerin) => (
           <section key={customerin}>
-            {customer.user_id && customer.status === "wait" ? (
+            {customer.user_id && (customer.status === "wait" || customer.status === "") ? (
               <ProfileBox
                 user={customer}
                 canClick={false}

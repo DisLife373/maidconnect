@@ -13,6 +13,7 @@ export default {
         'dark-green': "#286359",
         'dark-pink': '#E1829B',
         'light-pink': '#FFBED7',
+        'lighter-pink': '#FFBED7',
       }
     },
     fontSize: {

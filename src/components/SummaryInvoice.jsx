@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import api from "../axios";
-import "./css/SummaryInvoice.css";
-import { MdCancel } from "react-icons/md";
+// import "./css/SummaryInvoice.css";
+import { MdCancel, MdCall, MdMail } from "react-icons/md";
 import moment from "moment";
 
-function SummaryInvoice({ invoice_id, role, clickCancel }) {
+function SummaryInvoice({ invoice_id, role, clickCancel, main=false }) {
   const [invoice, setInvoice] = useState(null);
 
   useEffect(() => {
@@ -67,8 +67,8 @@ function SummaryInvoice({ invoice_id, role, clickCancel }) {
 
   return (
     <>
-      <div className="overlay" onClick={() => clickCancel(null)}></div>
-      <div className="invoice-summary">
+      {!main ?
+        <div className="invoice-summary">
         <div className="content-invoice-summary">
           <span onClick={() => clickCancel(null)} className="cancel-icon">
             <MdCancel color="#00897B" />
@@ -112,11 +112,11 @@ function SummaryInvoice({ invoice_id, role, clickCancel }) {
               <section className="contact-info">
                 <header>ช่องทางติดต่อ</header>
                 <section>
-                  <b>เบอร์โทร:</b>
+                  <b>{!main ? "เบอร์โทร:" : <MdCall />}</b>
                   <span>{invoice.tel}</span>
                 </section>
                 <section>
-                  <b>อีเมล:</b>
+                  <b>{!main ? "อีเมล:" : <MdMail />}</b>
                   <span>{invoice.email}</span>
                 </section>
               </section>
@@ -173,8 +173,55 @@ function SummaryInvoice({ invoice_id, role, clickCancel }) {
           </main>
         </div>
       </div>
+      :
+        <div className="content-invoice-summary text-normal p-2 rounded-r-3xl border-l-0 border-4 border-background-color">
+            <article className="user-profile">
+              <section className="contact-info">
+                <header className="bg-light-green">ช่องทางติดต่อ</header>
+                <section className="flex items-center gap-x-2">
+                  <b className="text-dark-green"><MdCall /></b>
+                  <span>{invoice.tel}</span>
+                </section>
+                <section className="flex items-center gap-x-2">
+                  <b className="text-dark-green"><MdMail /></b>
+                  <span>{invoice.email}</span>
+                </section>
+              </section>
+              <section className="address-info grid grid-cols-4 gap-x-1 ">
+                <header className="col-span-4 bg-light-green">ที่อยู่</header>
+                <section className="col-span-3 border-r-4 border-light-green">
+                  <span>{invoice.address}</span>
+                </section>
+                <section>
+                  <section>
+                    <b>ละติจูด:</b>
+                    <span>{invoice.latitude}</span>
+                  </section>
+                  <section>
+                    <b>ลองจิจูด:</b>
+                    <span>{invoice.longitude}</span>
+                  </section>
+                </section>
+              </section>
+            </article>
+            <article className="dateroom-info grid grid-cols-2 gap-x-1">
+              <section className="bg-light-green rounded-xl p-1">
+                <b>ชนิดห้อง:</b>
+                <section>
+                  <span>{invoice.room_size}</span>
+                </section>
+                <span>{invoice.room_type}</span>
+              </section>
+              <section className="bg-light-green rounded-xl p-1">
+                <b>ค่าจ้าง:</b>
+                <span>{invoice.amount} ฿</span>
+              </section>
+            </article>
+        </div>
+      }
     </>
   );
 }
 
 export default SummaryInvoice;
+{/* <div className={main ? "nonoverlay" : "overlay"} onClick={() => clickCancel(null)}></div> */}

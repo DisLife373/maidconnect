@@ -106,8 +106,9 @@ function MaidStatusWork() {
         />
       )}
       <div
-        className={`page-container ${alertConfirm ? "blurred" : ""}`}
-        style={{ marginBottom: "10vw" }}
+        // className={`page-container ${alertConfirm ? "blurred" : ""}`}
+        className="px-10 grid grid-cols-3 gap-5 row-auto "
+        // style={{ marginBottom: "10vw" }}
       >
         {customers.map((customer, customerid) => (
           <section key={customerid}>

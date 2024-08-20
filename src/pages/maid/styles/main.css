@@ -1,4 +1,4 @@
-main .main-maid {
+/* main .main-maid {
       padding: 0 5vw;
       font-size: 1vh;
   }
@@ -90,10 +90,6 @@ main .main-maid {
             font-size: 1vw;
       }
   
-      /* .customer-box .user-inform article section {
-          font-size: 1.5vw;
-      } */
-  
       main.main-maid {
           display: grid;
           grid-template-columns: 1fr 1fr;
@@ -114,13 +110,6 @@ main .main-maid {
           border: 1px solid black;
       }
   
-      /* .customer-box section:nth-child(1) {
-          font-size: 3vw;
-          text-align: center;
-          align-self: center;
-          color: #00897B;
-      } */
-  
       .profile-box {
           display: flex;
           flex-direction: column;
@@ -140,11 +129,5 @@ main .main-maid {
           font-size: 1vw;
           gap: 0.25vw;
       }
-  
-      /* .customer-box .user-inform article section span {
-          background-color: #ffbed798;
-          padding: 1vw;
-          border-radius: 10px;
-      } */
   }
-  
+   */

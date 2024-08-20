@@ -74,13 +74,13 @@ function App() {
             },
             {
               path: "status",
-              // element: (
-              //   <StatusBar
-              //     firstpage={"รอยืนยัน"}
-              //     secondpage={"กำลังทำ"}
-              //     thirdpage={"จบงาน"}
-              //   />
-              // ),
+              element: (
+                <StatusBar
+                  firstpage={"รอยืนยัน"}
+                  secondpage={"กำลังทำ"}
+                  thirdpage={"จบงาน"}
+                />
+              ),
               children: [
                 {
                   path: "wait",
@@ -130,13 +130,13 @@ function App() {
             },
             {
               path: "status",
-              // element: (
-              //   <StatusBar
-              //     firstpage={"รอยืนยัน"}
-              //     secondpage={"กำลังทำ"}
-              //     thirdpage={"ให้คะแนน"}
-              //   />
-              // ),
+              element: (
+                <StatusBar
+                  firstpage={"รอยืนยัน"}
+                  secondpage={"กำลังทำ"}
+                  thirdpage={"ให้คะแนน"}
+                />
+              ),
               children: [
                 {
                   path: "wait",

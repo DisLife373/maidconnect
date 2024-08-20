@@ -12,58 +12,184 @@ function MaidStatusWait() {
   const [invoice_id, setInvoiceId] = useState(null);
   const [customers, setCustomers] = useState([
     {
-      id: 1,
-      firstname: "atchima",
-      lastname: "nateepradap",
-      jobs: [
-        "กวาดบ้าน",
-        "ถูบ้าน",
-        "ล้างจาน",
-        "สักผ้า",
-        "ถูบ้าน",
-        "ล้างจาน",
-        "สักผ้า",
-      ],
-      start_time: "13:00:00",
-      end_time: "14:00:00",
-      work_date: "12 ก.ย. 66",
+      invoice_id: 4,
+      customer_id: 29,
+      maid_id: 1,
+      status: 'work',
+      work_date: '2024-06-04T17:00:00.000Z',
+      start_time: '13:42:41',
+      work_time: 0,
+      end_time: '15:42:18',
+      amount: 560,
+      note: 'ไม่ต้องรดต้นใหญ่',
+      jobs: [ {job_id: 1, job_name: 'ถูบ้าน'},
+        {job_id: 2, job_name: 'ถูบ้าน'},
+        {job_id: 3, job_name: 'ถูบ้าน'},
+        {job_id: 4, job_name: 'ถูบ้าน'},
+        {job_id: 5, job_name: 'ถูบ้าน'},
+        {job_id: 6, job_name: 'ถูบ้าน'},
+        {job_id: 7, job_name: 'ถูบ้าน'}],
+      user_id: 29,
+      user_pic: 'Great Grey Wolf MuNew.png1716870745749',
+      firstname: 'กีรตาพันธ์',
+      lastname: 'มาลัยย่ะ',
     },
     {
-      id: 2,
-      firstname: "atchima",
-      lastname: "nateepradap",
-      jobs: ["กวาดบ้าน", "ถูบ้าน", "ล้างจาน", "สักผ้า"],
-      start_time: "13:00:00",
-      end_time: "14:00:00",
-      work_date: "12 ก.ย. 66",
+      invoice_id: 4,
+      customer_id: 29,
+      maid_id: 1,
+      status: 'work',
+      work_date: '2024-06-04T17:00:00.000Z',
+      start_time: '13:42:41',
+      work_time: 0,
+      end_time: '15:42:18',
+      amount: 560,
+      note: 'ไม่ต้องรดต้นใหญ่',
+      jobs: [ {job_id: 1, job_name: 'ถูบ้าน'},
+        {job_id: 2, job_name: 'ถูบ้าน'},
+        {job_id: 3, job_name: 'ถูบ้าน'},
+        {job_id: 4, job_name: 'ถูบ้าน'},
+        {job_id: 5, job_name: 'ถูบ้าน'},
+        {job_id: 6, job_name: 'ถูบ้าน'},
+        {job_id: 7, job_name: 'ถูบ้าน'}],
+      user_id: 29,
+      user_pic: 'Great Grey Wolf MuNew.png1716870745749',
+      firstname: 'กีรตาพันธ์',
+      lastname: 'มาลัยย่ะ',
     },
     {
-      id: 3,
-      firstname: "atchi",
-      lastname: "natee",
-      jobs: ["กวาดบ้าน", "ถูบ้าน", "ล้างจาน", "สักผ้า"],
-      start_time: "13:00:00",
-      end_time: "14:00:00",
-      work_date: "12 ก.ย. 66",
+      invoice_id: 4,
+      customer_id: 29,
+      maid_id: 1,
+      status: 'work',
+      work_date: '2024-06-04T17:00:00.000Z',
+      start_time: '13:42:41',
+      work_time: 0,
+      end_time: '15:42:18',
+      amount: 560,
+      note: 'ไม่ต้องรดต้นใหญ่',
+      jobs: [ {job_id: 1, job_name: 'ถูบ้าน'},
+        {job_id: 2, job_name: 'ถูบ้าน'},
+        {job_id: 3, job_name: 'ถูบ้าน'},
+        {job_id: 4, job_name: 'ถูบ้าน'},
+        {job_id: 5, job_name: 'ถูบ้าน'},
+        {job_id: 6, job_name: 'ถูบ้าน'},
+        {job_id: 7, job_name: 'ถูบ้าน'}],
+      user_id: 29,
+      user_pic: 'Great Grey Wolf MuNew.png1716870745749',
+      firstname: 'กีรตาพันธ์',
+      lastname: 'มาลัยย่ะ',
     },
+    {
+      invoice_id: 4,
+      customer_id: 29,
+      maid_id: 1,
+      status: 'work',
+      work_date: '2024-06-04T17:00:00.000Z',
+      start_time: '13:42:41',
+      work_time: 0,
+      end_time: '15:42:18',
+      amount: 560,
+      note: 'ไม่ต้องรดต้นใหญ่',
+      jobs: [ {job_id: 1, job_name: 'ถูบ้าน'},
+        {job_id: 2, job_name: 'ถูบ้าน'},
+        {job_id: 3, job_name: 'ถูบ้าน'},
+        {job_id: 4, job_name: 'ถูบ้าน'},
+        {job_id: 5, job_name: 'ถูบ้าน'},
+        {job_id: 6, job_name: 'ถูบ้าน'},
+        {job_id: 7, job_name: 'ถูบ้าน'}],
+      user_id: 29,
+      user_pic: 'Great Grey Wolf MuNew.png1716870745749',
+      firstname: 'กีรตาพันธ์',
+      lastname: 'มาลัยย่ะ',
+    },
+    {
+      invoice_id: 4,
+      customer_id: 29,
+      maid_id: 1,
+      status: 'work',
+      work_date: '2024-06-04T17:00:00.000Z',
+      start_time: '13:42:41',
+      work_time: 0,
+      end_time: '15:42:18',
+      amount: 560,
+      note: 'ไม่ต้องรดต้นใหญ่',
+      jobs: [ {job_id: 1, job_name: 'ถูบ้าน'},
+        {job_id: 2, job_name: 'ถูบ้าน'},
+        {job_id: 3, job_name: 'ถูบ้าน'},
+        {job_id: 4, job_name: 'ถูบ้าน'},
+        {job_id: 5, job_name: 'ถูบ้าน'},
+        {job_id: 6, job_name: 'ถูบ้าน'},
+        {job_id: 7, job_name: 'ถูบ้าน'}],
+      user_id: 29,
+      user_pic: 'Great Grey Wolf MuNew.png1716870745749',
+      firstname: 'กีรตาพันธ์',
+      lastname: 'มาลัยย่ะ',
+    },
+    {
+      invoice_id: 4,
+      customer_id: 29,
+      maid_id: 1,
+      status: 'work',
+      work_date: '2024-06-04T17:00:00.000Z',
+      start_time: '13:42:41',
+      work_time: 0,
+      end_time: '15:42:18',
+      amount: 560,
+      note: 'ไม่ต้องรดต้นใหญ่',
+      jobs: [ {job_id: 1, job_name: 'ถูบ้าน'},
+        {job_id: 2, job_name: 'ถูบ้าน'},
+        {job_id: 3, job_name: 'ถูบ้าน'},
+        {job_id: 4, job_name: 'ถูบ้าน'},
+        {job_id: 5, job_name: 'ถูบ้าน'},
+        {job_id: 6, job_name: 'ถูบ้าน'},
+        {job_id: 7, job_name: 'ถูบ้าน'}],
+      user_id: 29,
+      user_pic: 'Great Grey Wolf MuNew.png1716870745749',
+      firstname: 'กีรตาพันธ์',
+      lastname: 'มาลัยย่ะ',
+    },
+    {
+      invoice_id: 4,
+      customer_id: 29,
+      maid_id: 1,
+      status: 'work',
+      work_date: '2024-06-04T17:00:00.000Z',
+      start_time: '13:42:41',
+      work_time: 0,
+      end_time: '15:42:18',
+      amount: 560,
+      note: 'ไม่ต้องรดต้นใหญ่',
+      jobs: [ {job_id: 1, job_name: 'ถูบ้าน'},
+        {job_id: 2, job_name: 'ถูบ้าน'},
+        {job_id: 3, job_name: 'ถูบ้าน'},
+        {job_id: 4, job_name: 'ถูบ้าน'},
+        {job_id: 5, job_name: 'ถูบ้าน'},
+        {job_id: 6, job_name: 'ถูบ้าน'},
+        {job_id: 7, job_name: 'ถูบ้าน'}],
+      user_id: 29,
+      user_pic: 'Great Grey Wolf MuNew.png1716870745749',
+      firstname: 'กีรตาพันธ์',
+      lastname: 'มาลัยย่ะ',
+    }
   ]);
   const [alertConfirm, setAlertConfirm] = useState(false);
   const [alertCancel, setAlertCancel] = useState(false);
 
-  useEffect(() => {
-    const fetchCustomer = async () => {
-      try {
-        const res = await api.post("/api/v1/invoice/maid/status/wait", {
-          token: window.localStorage.getItem("authtoken"),
-        });
-        setCustomers(res.data);
-      } catch (err) {
-        console.log(err);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchCustomer = async () => {
+  //     try {
+  //       const res = await api.post("/api/v1/invoice/maid/status/wait", {
+  //         token: window.localStorage.getItem("authtoken"),
+  //       });
+  //       setCustomers(res.data);
+  //     } catch (err) {
+  //       console.log(err);
+  //     }
+  //   };
 
-    fetchCustomer();
-  }, []);
+  //   fetchCustomer();
+  // }, []);
 
   const handleClickConfirmOK = async () => {
     try {
@@ -149,10 +275,13 @@ function MaidStatusWait() {
         />
       )}
       <div
-        className={`page-container ${
-          alertConfirm || alertCancel ? "blurred" : ""
-        }`}
-        style={{ marginBottom: "10vw" }}
+        // className={`page-container ${
+        //   alertConfirm || alertCancel ? "blurred" : ""
+        // }`}
+        // style={{ marginBottom: "10vw" }}
+        className={"px-10 grid grid-cols-3 gap-5 row-auto" + `${alertCancel || alertConfirm ? " backdrop-blur-xl" : ""}`}
+        // className={alertConfirm === true ? "px-10 grid grid-cols-3 gap-5 row-auto backdrop-grayscale-0 bg-white/30" : "px-10 grid grid-cols-3 gap-5 row-auto"}
+        // className="bg-light-pink h-screen"
       >
         {customers.map((customer, customerid) => (
           <section key={customerid}>

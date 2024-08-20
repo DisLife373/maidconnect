@@ -35,6 +35,15 @@
   .active {
     @apply text-dark-green border-b-4 border-dark-green
   }
+  .btn-ok-cancel {
+    @apply text-sx bg-green-darkness hover:bg-background-color py-2 px-6 rounded-full text-white transition duration-500;
+  }
+  .text-normal {
+    @apply text-sx sm:text-sm md:text-base
+  }
+  .text-header {
+    @apply text-sx sm:text-sm md:text-base
+  }
 }
 /* body {
   margin: 0;
