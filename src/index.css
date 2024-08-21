@@ -21,7 +21,7 @@
     @apply relative w-full;
   }
   .span-head-form {
-    @apply block w-full pb-1 text-sx transition-all duration-200 ease-in-out group-focus-within:text-green-darkness
+    @apply sm:text-sm md:text-base lg:text-basexl block w-full pb-1 text-sx transition-all duration-200 ease-in-out group-focus-within:text-green-darkness
   }
   .input-radio {
 	@apply relative h-5 w-5 cursor-pointer appearance-none rounded-full border-2 border-dark-pink transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:opacity-0 before:transition-opacity checked:before:bg-gray-900 hover:before:opacity-10 checked:appearance-auto accent-dark-pink
@@ -42,7 +42,16 @@
     @apply text-sx sm:text-sm md:text-base
   }
   .text-header {
-    @apply text-sx sm:text-sm md:text-base
+    @apply text-sm sm:text-base md:text-basexl
+  }
+  .profile > section {
+    @apply grid grid-cols-4
+  }
+  .profile > section > b {
+    @apply text-green-darkness
+  }
+  .profile > section > span {
+    @apply col-span-3
   }
 }
 /* body {

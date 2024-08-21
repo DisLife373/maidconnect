@@ -9,7 +9,7 @@ function Popup({ alert, message, clickCancel, clickOK, buttonName = "ตกล�
     <dialog 
       // className={`${alert ? "show" : ""}`} 
       id="popup"
-      className={alert ? "grid grid-rows-3 grid-cols-4 gap-y-2 object-none object-center absolute z-50 inset-0 bg-white p-2 px-5 rounded-2xl w-4/6 md:w-2/6 ": "hidden"}
+      className={alert ? "grid grid-rows-3 grid-cols-4 gap-y-2 object-none object-center absolute z-50 inset-0 bg-white p-2 px-5 rounded-2xl w-4/6 md:w-2/6 shadow-2xl shadow-background-color": "hidden"}
     >
       <span onClick={clickCancel} className="text-basexl sm:text-xl md:text-2xl text-dark-green col-span-4 justify-self-end">
         <MdCancel color="#00897B" />

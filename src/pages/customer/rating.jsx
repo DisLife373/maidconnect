@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Axios from "../../axios";
 import RatingBox from "../../components/RatingBox";
 import Popup from "../../components/Popup";
-import "./css/rating.css";
+// import "./css/rating.css";
 import api from "../../axios";
 import Alert from "../../components/Alert";
 import toast from "react-hot-toast";
@@ -73,7 +73,7 @@ function UserStatusRating() {
   return (
     <>
       <Alert />
-      <section className="rating-page" style={{ marginBottom: "10vw" }}>
+      <section className="rating-page px-10 grid row-auto w-full grid-cols-3 gap-5" style={{ marginBottom: "10vw" }}>
         {invoice.map((invoice, index) => (
           <RatingBox
             key={index}

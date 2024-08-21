@@ -1,5 +1,4 @@
-main.customer-maidprofile {
-  /* padding: 5vw; */
+/* main.customer-maidprofile {
   gap: 5vw;
   font-size: 2vw;
   margin: 5vw;
@@ -15,9 +14,6 @@ main.customer-maidprofile > article:first-child {
   border-radius: 30px;
   align-items: center;
 }
-/* main.customer-maidprofile figure{
-      width: 30vw;
-} */
 main.customer-maidprofile img {
   aspect-ratio: 1 / 1;
   border-radius: 50%;
@@ -30,7 +26,6 @@ main.customer-maidprofile img {
 main.customer-maidprofile header {
   font-size: min(1.5em, 25px);
   font-weight: 600;
-  /* padding-top: 2vw; */
   padding-bottom: 1.5vw;
   align-self: center;
 }
@@ -56,12 +51,10 @@ main.customer-maidprofile > article:first-child section section.job-chips {
 }
 main.customer-maidprofile > article:first-child section section.job-chips span {
   background-color: #ffbed798;
-  /* padding: 1vw; */
   border-radius: 10px;
   font-size: min(1em, 16px);
 }
 main.customer-maidprofile > article:first-child > article footer {
-  /* padding: 2vw; */
   display: flex;
   justify-content: center;
 }
@@ -211,13 +204,11 @@ main.customer-maidprofile
     max-height: 80vh;
   }
   main.customer-maidprofile > article {
-    /* font-size: 2.5vh; */
     overflow-y: auto;
     max-height: 80vh;
   }
 
   main.customer-maidprofile header {
-    /* font-size: 3.5vh; */
     padding-bottom: 1.5vh;
     padding-top: 2vh;
   }
@@ -227,7 +218,6 @@ main.customer-maidprofile
     scrollbar-width: none;
   }
   main.customer-maidprofile > article:first-child section section.job-chips {
-    /* font-size: 2vh; */
     gap: 1.5vh;
   }
   main.customer-maidprofile
@@ -241,7 +231,6 @@ main.customer-maidprofile
     padding: 2vh;
   }
   main.customer-maidprofile button {
-    /* font-size: 2vh; */
     padding: 0.5vw 5vh;
   }
   main.customer-maidprofile > article:nth-child(2) {
@@ -262,7 +251,18 @@ main.customer-maidprofile
   main.customer-maidprofile > article:nth-child(2) > section > p {
     padding: 2vh;
   }
-  .read-more__checkbox ~ .read-more__label {
-    /* font-size: 2vh; */
-  }
+} */
+/* Add this CSS to enable the read-more functionality using the checkbox */
+/* Tailwind-compatible approach for toggling the label text */
+.read-more__checkbox:checked ~ .read-more__text {
+  max-height: none; /* Remove height restriction when checkbox is checked */
 }
+
+.read-more__checkbox:checked ~ .read-more__label .read-more__text-hidden {
+  display: none;
+}
+
+.read-more__checkbox:checked ~ .read-more__label .read-more__text-visible {
+  display: inline;
+}
+
