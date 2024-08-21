@@ -27,26 +27,34 @@ function UserStatusWork() {
   };
   return (
     <>
-      {invoice_id && (
-        <SummaryInvoice
-          role={"customer"}
-          invoice_id={invoice_id}
-          clickCancel={() => setInvoiceId(null)}
-        />
-      )}
-      <div style={{ marginBottom: "10vw" }}>
-        {maids.map((maid, index) => (
-          <section key={index}>
-            {maid.user_id && (
-              <ProfileBox
-                user={maid}
-                canClick={false}
-                buttonName="กำลังทำงาน..."
-                handleClickSummary={handleClickSummary}
-              />
-            )}
-          </section>
-        ))}
+      <div
+        style={{ marginBottom: "10vw" }}
+        className={
+          "px-10 grid row-auto w-full " +
+          `${invoice_id ? "grid-cols-1" : "grid-cols-3 gap-5"}`
+        }
+      >
+        {invoice_id && (
+          <SummaryInvoice
+            role={"customer"}
+            invoice_id={invoice_id}
+            clickCancel={() => setInvoiceId(null)}
+          />
+        )}
+
+        {!invoice_id &&
+          maids.map((maid, index) => (
+            <section key={index}>
+              {maid.user_id && (
+                <ProfileBox
+                  user={maid}
+                  canClick={false}
+                  buttonName="กำลังทำงาน..."
+                  handleClickSummary={handleClickSummary}
+                />
+              )}
+            </section>
+          ))}
       </div>
     </>
   );
