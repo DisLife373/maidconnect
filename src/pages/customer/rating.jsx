@@ -23,6 +23,8 @@ function UserStatusRating() {
 
   useEffect(() => {
     fetchInvoice();
+    console.log(invoice);
+    
   }, []);
 
   const handleStarClick = (invoiceID, starValue) => {
@@ -48,8 +50,9 @@ function UserStatusRating() {
   };
 
   const handleSubmit = async (maidId) => {
+    
     try {
-      const newreview = invoice.find((maid) => maid.id === maidId);
+      const newreview = invoice.find((maid) => maid.maid_id === maidId);
       const addreview = await api.post("/api/v1/review/addReview", newreview);
       if (addreview.data.success === true) {
         console.log("success");

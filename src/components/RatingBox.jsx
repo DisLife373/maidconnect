@@ -30,7 +30,7 @@ function RatingBox({ invoice, handleSubmit, clickStar, handleChange }) {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          handleSubmit(invoice.id);
+          handleSubmit(invoice.maid_id);
         }}
         className="flex flex-col gap-y-5"
       >

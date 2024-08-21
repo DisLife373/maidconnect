@@ -553,7 +553,7 @@ const getInvoiceByDate = async (req, res) => {
             AND Invoice.status = 'work'
             GROUP BY Invoice.invoice_id) inv 
           INNER JOIN Account acc 
-          ON acc.user_id = inv.maid_id`,
+          ON acc.user_id = inv.customer_id`,
         [user_id, date]
       );
       console.log(search_by_date.rows);
