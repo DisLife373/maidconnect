@@ -10,110 +10,24 @@ function UserStatusWait() {
   const invoiceID = useRef(null);
   const [invoice_id, setInvoiceId] = useState(null);
   const [alertConfirm, setAlertConfirm] = useState(false);
-  const [customers, setCustomers] = useState([
-    {
-      id: 1,
-      firstname: "atchima",
-      lastname: "nateepradap",
-      jobs: [
-        {job_id: 1, job_name: 'ถูบ้าน'},
-        {job_id: 2, job_name: 'ถูบ้าน'},
-        {job_id: 3, job_name: 'ถูบ้าน'},
-        {job_id: 4, job_name: 'ถูบ้าน'},
-        {job_id: 5, job_name: 'ถูบ้าน'},
-        {job_id: 6, job_name: 'ถูบ้าน'},
-        {job_id: 7, job_name: 'ถูบ้าน'},
-        {job_id: 9, job_name: 'ถูบ้าน'},
-        {job_id: 10, job_name: 'ถูบ้าน'},
-        {job_id: 11, job_name: 'ถูบ้าน'},
-        {job_id: 11, job_name: 'ถูบ้าน'},
-        {job_id: 11, job_name: 'ถูบ้าน'},
-        {job_id: 11, job_name: 'ถูบ้าน'},
-      ],
-      start_time: "13:00:00",
-      end_time: "14:00:00",
-      work_date: "12 ก.ย. 66",
-    },
-    {
-      id: 2,
-      firstname: "atchima",
-      lastname: "nateepradap",
-      jobs: [
-        {job_id: 1, job_name: 'ถูบ้าน'},
-        {job_id: 2, job_name: 'ถูบ้าน'},
-        {job_id: 3, job_name: 'ถูบ้าน'},
-        {job_id: 4, job_name: 'ถูบ้าน'},
-        {job_id: 5, job_name: 'ถูบ้าน'},
-        {job_id: 6, job_name: 'ถูบ้าน'},
-        {job_id: 7, job_name: 'ถูบ้าน'},
-        {job_id: 9, job_name: 'ถูบ้าน'},
-        {job_id: 10, job_name: 'ถูบ้าน'},
-        {job_id: 11, job_name: 'ถูบ้าน'},
-      ],
-      start_time: "13:00:00",
-      end_time: "14:00:00",
-      work_date: "12 ก.ย. 66",
-      status: "wait",
-    },
-    {
-      id: 3,
-      firstname: "atchi",
-      lastname: "natee",
-      jobs: [
-        {job_id: 1, job_name: 'ถูบ้าน'},
-        {job_id: 2, job_name: 'ถูบ้าน'},
-        {job_id: 3, job_name: 'ถูบ้าน'},
-        {job_id: 4, job_name: 'ถูบ้าน'},
-        {job_id: 5, job_name: 'ถูบ้าน'},
-        {job_id: 6, job_name: 'ถูบ้าน'},
-        {job_id: 7, job_name: 'ถูบ้าน'},
-        {job_id: 9, job_name: 'ถูบ้าน'},
-        {job_id: 10, job_name: 'ถูบ้าน'},
-        {job_id: 11, job_name: 'ถูบ้าน'},
-      ],
-      start_time: "13:00:00",
-      end_time: "14:00:00",
-      work_date: "12 ก.ย. 66",
-      status: "work",
-    },
-    {
-      id: 4,
-      firstname: "atchi",
-      lastname: "natee",
-      jobs: [
-        {job_id: 1, job_name: 'ถูบ้าน'},
-        {job_id: 2, job_name: 'ถูบ้าน'},
-        {job_id: 3, job_name: 'ถูบ้าน'},
-        {job_id: 4, job_name: 'ถูบ้าน'},
-        {job_id: 5, job_name: 'ถูบ้าน'},
-        {job_id: 6, job_name: 'ถูบ้าน'},
-        {job_id: 7, job_name: 'ถูบ้าน'},
-        {job_id: 9, job_name: 'ถูบ้าน'},
-        {job_id: 10, job_name: 'ถูบ้าน'},
-        {job_id: 11, job_name: 'ถูบ้าน'},
-      ],
-      start_time: "13:00:00",
-      end_time: "14:00:00",
-      work_date: "12 ก.ย. 66",
-    },
-  ]);
+  const [customers, setCustomers] = useState([]);
 
-  // useEffect(() => {
-  //   const fetchCustomer = async () => {
-  //     try {
-  //       const res = await api.post("/api/v1/invoice/customer/status/wait", {
-  //         token: window.localStorage.getItem("authtoken"),
-  //       });
-  //       setCustomers(res.data);
-  //     } catch (err) {
-  //       console.log(err);
-  //     }
-  //   };
-  //   fetchCustomer();
-  // }, []);
-  // useEffect(() => {
-  //   console.log(customers);
-  // }, [customers]);
+  useEffect(() => {
+    const fetchCustomer = async () => {
+      try {
+        const res = await api.post("/api/v1/invoice/customer/status/wait", {
+          token: window.localStorage.getItem("authtoken"),
+        });
+        setCustomers(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchCustomer();
+  }, []);
+  useEffect(() => {
+    console.log(customers);
+  }, [customers]);
 
   const handleClickSummary = (invId) => {
     setInvoiceId(invId);

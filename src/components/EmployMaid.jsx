@@ -62,10 +62,6 @@ function EmployMaid({
               required
             />
           </label>
-          <label>
-            <span>เวลาสิ้นสุดงาน:</span>
-            <span>{endTime != "NaN:NaN:00" ? endTime : ""} น.</span>
-          </label>
         </section>
       </article>
 
@@ -134,8 +130,14 @@ function EmployMaid({
         </label>
       </article>
       <article>
-        <header>ราคารวม:</header>
-        <span> {isNaN(amount) ? 0 : amount.toFixed(2)} บาท</span>
+        <section>
+          <header>ราคารวม:</header>
+          <span> {isNaN(amount) ? 0 : amount.toFixed(2)} บาท</span>
+        </section>
+        <section>
+          <header>เวลาสิ้นสุดงาน:</header>
+          <span>{endTime != "NaN:NaN:00" ? endTime : ""} น.</span>
+        </section>
       </article>
     </article>
   );
