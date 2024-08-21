@@ -19,7 +19,7 @@ function ProfileBox({
   });
 
   return (
-    <div className={name ? "h-full profilebox-wrapper rounded-3xl border-4 border-dark-pink hover:bg-light-pink/25 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-100 duration-300" : "h-fullprofilebox-wrapper rounded-3xl border-4 border-background-color hover:bg-light-green transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-100 duration-300"}>
+    <div className={name ? "h-full profilebox-wrapper rounded-3xl border-4 border-dark-pink hover:bg-light-pink/25 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-100 duration-300" : "h-full profilebox-wrapper rounded-3xl border-4 border-background-color hover:bg-light-green transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-100 duration-300"}>
       <section className="profilebox-container p-3 grid grid-cols-4 content-center gap-3 h-full" id={name && "cancel"}>
         {user.user_pic ? (
           <img
@@ -41,7 +41,7 @@ function ProfileBox({
 
         <div className="profilebox-content col-span-3 grid gap-y-2 ">
           <article
-            className="profilebox-information "
+            className="profilebox-information"
             onClick={() => {
               handleClickSummary(user.invoice_id);
             }}

@@ -164,15 +164,9 @@ function UserStatusWait() {
         }}
         clickOK={handleClickCancelOK}
       />
-      {invoice_id && (
-        <SummaryInvoice
-          role={"customer"}
-          invoice_id={invoice_id}
-          clickCancel={() => setInvoiceId(null)}
-        />
-      )}
-      <div style={{ marginBottom: "10vw" }} className="px-10 grid grid-cols-3 gap-5 row-auto ">
-        {customers.map((customer, customerin) => (
+      
+      <div style={{ marginBottom: "10vw" }} className={"px-10 grid row-auto w-full " + `${invoice_id ? "grid-cols-1" : "grid-cols-3 gap-5"}`}>
+        {!invoice_id && customers.map((customer, customerin) => (
           <section key={customerin}>
             {customer.user_id && (customer.status === "wait" || customer.status === "") ? (
               <ProfileBox
@@ -199,6 +193,13 @@ function UserStatusWait() {
             )}
           </section>
         ))}
+        {invoice_id && (
+          <SummaryInvoice
+            role={"customer"}
+            invoice_id={invoice_id}
+            clickCancel={() => setInvoiceId(null)}
+          />
+        )}
       </div>
     </>
   );

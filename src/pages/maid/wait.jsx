@@ -267,23 +267,17 @@ function MaidStatusWait() {
         }}
         clickOK={handleClickCancelOK}
       />
-      {invoice_id && (
-        <SummaryInvoice
-          role={"maid"}
-          invoice_id={invoice_id}
-          clickCancel={() => setInvoiceId(null)}
-        />
-      )}
+      
       <div
         // className={`page-container ${
         //   alertConfirm || alertCancel ? "blurred" : ""
         // }`}
         // style={{ marginBottom: "10vw" }}
-        className={"px-10 grid grid-cols-3 gap-5 row-auto" + `${alertCancel || alertConfirm ? " backdrop-blur-xl" : ""}`}
+        className={"px-10 grid row-auto w-full " + `${invoice_id ? "grid-cols-1" : "grid-cols-3 gap-5"}`}
         // className={alertConfirm === true ? "px-10 grid grid-cols-3 gap-5 row-auto backdrop-grayscale-0 bg-white/30" : "px-10 grid grid-cols-3 gap-5 row-auto"}
         // className="bg-light-pink h-screen"
       >
-        {customers.map((customer, customerid) => (
+        {!invoice_id && customers.map((customer, customerid) => (
           <section key={customerid}>
             {customer.user_id && (
               <ProfileBox
@@ -296,6 +290,13 @@ function MaidStatusWait() {
             )}
           </section>
         ))}
+        {invoice_id && (
+          <SummaryInvoice
+            role={"maid"}
+            invoice_id={invoice_id}
+            clickCancel={() => setInvoiceId(null)}
+          />
+      )}
       </div>
     </>
   );

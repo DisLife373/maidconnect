@@ -43,11 +43,11 @@ function ManageJob({ user, handleChange }) {
 
   return (
     <section className="manage-job flex flex-col">
-      <b>ชนิดงาน</b>
-      <div className="bg-light-green rounded-md p-5">
-        <section className="joblist bg-white h-20 p-5 flex flex-row gap-3 overflow-y-auto flex-wrap rounded-md">
+      <b className="span-head-form sm:text-sm md:text-base lg:text-basexl">ชนิดงาน</b>
+      <div className="bg-light-green rounded-2xl p-5">
+        <section className="joblist bg-white h-20 p-5 flex flex-row gap-3 overflow-y-auto flex-wrap rounded-2xl">
           {user.jobs?.map((job, jobin) => (
-            <span key={jobin} className="text-black text-sx sm:text-sm md:text-base bg-light-pink px-5 py-1 rounded-full"> {job.job_name} </span>
+            <span key={jobin} className="text-black text-sx sm:text-sm md:text-base bg-light-pink px-2 py-1 rounded-full"> {job.job_name} </span>
           ))}
         </section>
 

@@ -150,7 +150,7 @@ function MaidMain() {
       </header>
       <main className={"profile-box px-10 py-5 gap-y-2 flex flex-wrap overscroll-contain h-screen overflow-y-auto col-span-2 w-full"}>
         {invoices.map((invoice, invoiceid) => (
-            <section key={invoiceid} onClick={handleClickSummary(invoice.invoice_id)} className="grid grid-cols-2 group">
+            <section key={invoiceid} className="grid grid-cols-2 group">
                         {invoice.user_id && (
                               <ProfileBox
                                     user={invoice}
@@ -165,7 +165,6 @@ function MaidMain() {
                         <SummaryInvoice
                               role={"maid"}
                               invoice_id={invoice.invoice_id}
-                              clickCancel={() => setInvoiceId(null)}
                               main={true}
                         />
             </section>

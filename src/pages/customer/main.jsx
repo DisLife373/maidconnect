@@ -182,13 +182,13 @@ function CustomerMain() {
   return (
     <div className="customer-main">
       <header>
-        <p> แม่บ้านที่เคยเรียกใช้ </p>
+        <p className="text-center self-center text-basexl sm:text-xl"> แม่บ้านที่เคยเรียกใช้ </p>
         <RecommendBox maids={maidsHired} handleClickHired={handleClickHired} />
       </header>
-      <main>
+      <main className="gap-y-5">
         <header>
           <label>
-            <span> ระยะทาง </span>
+            <span > ระยะทาง </span>
             <select
               id="distance"
               name="distance"
@@ -244,19 +244,21 @@ function CustomerMain() {
             </ul>
           </label>
         </header>
-        <main>
+        <main className="gap-y-2">
           {isShowRecommend
             ? recommendMaid.map((maid, index) => (
-                <div key={index} className="main-profilebox-wrapper">
+                <div key={index} className="gap-y-5 main-profilebox-wrapper rounded-3xl border-4 border-background-color hover:bg-light-green transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-100 duration-300">
                   <a
                     href={`/customer/maids/profile/${maid.email}`}
                     style={{ textDecoration: "none", color: "inherit" }}
                     onClick={() => handleClick(maid.email)}
+                    className="p-3 grid grid-cols-4 content-center h-full"
                   >
                     {maid.user_pic ? (
                       <img
                         src={"../../../public/imageGalleries/" + maid.user_pic}
                         style={{ width: "30vw" }}
+                        className="aspect-square rounded-full place-self-center"
                       />
                     ) : (
                       <img
@@ -264,27 +266,31 @@ function CustomerMain() {
                           "../../../public/imageGalleries/1716567567852no_account"
                         }
                         style={{ width: "30vw" }}
+                        className="aspect-square rounded-full place-self-center"
                       />
                     )}
-                    <div className="main-profilebox-content">
+                    <div className="main-profilebox-content col-span-3 grid">
                       <article>
-                        <header>
+                        <header className="text-smbase sm:text-base lg:text-basexl text-dark-green">
                           {maid.firstname} {maid.lastname}
                         </header>
                         <section>
-                          <span>Rating: </span>
-                          <span> {maid.avg_rating} / 5.0 </span>
+                          <b className="text-sm sm:text-base md:text-basexl">คะแนน: </b>
+                          <span className="text-sx sm:text-sm md:text-base"> {maid.avg_rating} / 5.0 </span>
                         </section>
                         <section>
-                          <span>Distance: </span>
-                          <span>
+                          <b className="text-sm sm:text-base md:text-basexl">ระยะทาง: </b>
+                          <span className="text-sx sm:text-sm md:text-base">
                             {maid.address_distance.toFixed(2)}
                             km.
                           </span>
                         </section>
-                        <section className="main-job-chips">
+                        <section className="main-job-chips flex flex-wrap gap-x-2 gap-y-1">
                           {maid.jobs?.slice(0, 10).map((job, job_index) => (
-                            <span key={job_index}>
+                            <span 
+                              key={job_index}
+                              className="text-ss sm:text-sx md:text-sm bg-light-pink px-2 rounded-full"
+                            >
                               {jobchoices[job - 1]?.job_name}
                             </span>
                           ))}

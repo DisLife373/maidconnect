@@ -5,16 +5,11 @@ div.customer-main {
   flex-direction: column;
   font-size: 2vw;
 }
-.customer-main > header {
+/* .customer-main > header {
   padding-bottom: 5vw;
   padding-left: 2em;
   padding-right: 2em;
-}
-.customer-main > header > p {
-  font-size: min(2em, 25px);
-  font-weight: 600;
-}
-
+} */
 .customer-main main {
   padding: min(1em, 20px);
   background-color: white;
@@ -22,7 +17,7 @@ div.customer-main {
   border-top-right-radius: 30px;
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  /* gap: 1em; */
   overflow-y: scroll;
   scrollbar-width: none;
 }
@@ -73,7 +68,7 @@ div.customer-main {
   font-size: min(2.5em, 16px);
 }
 
-.customer-main > .main-profilebox-wrapper {
+/* .customer-main > .main-profilebox-wrapper {
   padding: 1em;
 }
 
@@ -81,9 +76,9 @@ div.customer-main {
   font-size: 2em;
   font-weight: 600;
   padding: 0.5em;
-}
+} */
 
-.main-profilebox-wrapper > a {
+/* .main-profilebox-wrapper > a {
   padding: min(1em, 20px);
   background-color: #e0f2f1;
   display: grid;
@@ -98,8 +93,8 @@ div.customer-main {
   grid-row: 1 / 2;
   align-items: center;
   align-self: center;
-}
-.main-profilebox-content {
+} */
+/* .main-profilebox-content {
   display: flex;
   flex-direction: column;
   padding-left: 1em;
@@ -130,7 +125,7 @@ div.customer-main {
 
 .main-profilebox-content article header {
   padding-left: 0vw;
-}
+} */
 
 @media (min-width: 600px) {
   div.customer-main {
